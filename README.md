@@ -15,6 +15,8 @@ Classic Waffle puts the beloved Microsoft 365 app launcher right where it belong
 
 </div>
 
+> **Disclaimer:** This project was vibe coded during breakfast at MVP Summit. It's a div with links — nothing fancy, nothing scary. No data is collected, no magic happens behind the scenes. If this gets traction, we'll absolutely give it a proper look. Until then, enjoy the nostalgia and the convenience.
+
 ---
 
 ## Why?
