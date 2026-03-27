@@ -1,0 +1,75 @@
+{
+  "manifest_version": 3,
+  "name": "Classic Waffle",
+  "version": "1.0.0",
+  "description": "The classic Microsoft 365 app launcher, always one click away in your browser side panel.",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "scripting",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.microsoft/*",
+    "https://*.microsoft.com/*",
+    "https://*.microsoft365.com/*",
+    "https://*.office.com/*",
+    "https://*.office365.com/*",
+    "https://*.sharepoint.com/*",
+    "https://*.cloud.microsoft/*",
+    "https://*.live.com/*"
+  ],
+  "action": {
+    "default_title": "Open Classic Waffle",
+    "default_icon": {
+      "16": "icons/extension/icon-16.png",
+      "32": "icons/extension/icon-32.png",
+      "48": "icons/extension/icon-48.png",
+      "128": "icons/extension/icon-128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.microsoft/*",
+        "https://*.microsoft.com/*",
+        "https://*.microsoft365.com/*",
+        "https://*.office.com/*",
+        "https://*.office365.com/*",
+        "https://*.sharepoint.com/*",
+        "https://*.cloud.microsoft/*",
+        "https://*.live.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/extension/icon-16.png",
+    "48": "icons/extension/icon-48.png",
+    "128": "icons/extension/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/apps/*.svg"],
+      "matches": [
+        "https://*.microsoft/*",
+        "https://*.microsoft.com/*",
+        "https://*.microsoft365.com/*",
+        "https://*.office.com/*",
+        "https://*.office365.com/*",
+        "https://*.sharepoint.com/*",
+        "https://*.cloud.microsoft/*",
+        "https://*.live.com/*"
+      ]
+    }
+  ]
+}

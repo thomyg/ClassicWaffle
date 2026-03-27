@@ -1,0 +1,206 @@
+/* Classic Waffle — Side Panel Styles */
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-hover: #f0f0f0;
+  --text-primary: #242424;
+  --text-secondary: #616161;
+  --border-color: #e0e0e0;
+  --accent: #0078d4;
+  --accent-hover: #106ebe;
+  --header-bg: #f5f5f5;
+  --tile-size: 72px;
+  --icon-size: 40px;
+  --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1f1f1f;
+    --bg-secondary: #2d2d2d;
+    --bg-hover: #383838;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --border-color: #404040;
+    --header-bg: #2d2d2d;
+    --accent: #4db8ff;
+    --accent-hover: #2fa4f5;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo {
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s, color 0.1s;
+}
+
+.btn-icon:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Panel Body */
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 6px;
+}
+
+.panel-body.hidden {
+  display: none;
+}
+
+/* App Grid */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+  gap: 2px;
+  padding: 0 4px;
+}
+
+/* App Tile */
+.app-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: 10px 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  user-select: none;
+  -webkit-user-drag: element;
+  min-height: 76px;
+}
+
+.app-tile:hover {
+  background: var(--bg-hover);
+}
+
+.app-tile:active {
+  background: var(--border-color);
+}
+
+.app-tile.dragging {
+  opacity: 0.3;
+}
+
+.app-tile.drag-placeholder {
+  background: var(--bg-hover);
+  border: 2px dashed var(--accent);
+  border-radius: 6px;
+  min-height: 76px;
+  pointer-events: none;
+}
+
+/* App Icon */
+.app-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* App Label */
+.app-label {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-primary);
+  max-width: 64px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Group Header */
+.app-group {
+  margin-bottom: 4px;
+}
+
+.group-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 12px 10px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Scrollbar */
+.panel-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-body::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.panel-body::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

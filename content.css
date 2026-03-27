@@ -1,0 +1,5 @@
+/* Host element positioning — all other styles are in Shadow DOM */
+#classic-waffle-host {
+  display: inline-flex !important;
+  align-items: center !important;
+}
