@@ -43,13 +43,13 @@ Classic Waffle brings it back as a browser extension. It injects the familiar gr
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/thomyg/ClassicWaffel.git
+   git clone https://github.com/thomyg/ClassicWaffle.git
    ```
 2. Open your browser's extension page:
    - **Chrome**: `chrome://extensions`
    - **Edge**: `edge://extensions`
 3. Enable **Developer mode** (toggle in the top-right corner)
-4. Click **Load unpacked** and select the `ClassicWaffel` folder
+4. Click **Load unpacked** and select the `ClassicWaffle` folder
 5. Navigate to any M365 page — the waffle icon appears in the top nav
 
 ### From the Chrome Web Store / Edge Add-ons
@@ -101,7 +101,7 @@ _Coming soon._
 ## Project Structure
 
 ```
-ClassicWaffel/
+ClassicWaffle/
 ├── manifest.json          # Extension manifest (V3)
 ├── background.js          # Service worker — side panel + content script injection
 ├── content.js             # Injected into M365 pages — waffle icon + floating panel
